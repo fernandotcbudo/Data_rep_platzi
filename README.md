@@ -1,6 +1,6 @@
 # **Hi!**
 
-**My name is Fernando, and in this repository you will see my learning journey in Data Science and AI.**
+**My name is Fernando, and in this repository you will see my learning journey through Data Science and AI.**
 
 **I hope it might be helpful**
 
