@@ -1,4 +1,4 @@
-# Function that receives three numbers, and returns its average.  
+# Function that receives three numbers, and returns its average OK.  
 
 def operation(list_transformed):
     op=0
