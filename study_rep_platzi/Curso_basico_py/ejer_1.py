@@ -1,33 +1,35 @@
 
-def run():
-    pesos=int(input('''
-    
-    Bienvenido a tu conversor de moneda:
+import random
+import sys
 
-    Elige tu moneda
+sys.setrecursionlimit(10**6)
 
-    1. Pesos colombianos 
-    2. Pesos argentinos 
-    3. Pesos mexicanos 
-      ''')) 
+def operation(b,n):
+
+    if n <= 0:
+        return 1
     
-    numero_pesos=int(input('''
-    Digita cuantos pesos tienes: 
-    '''))
-    
-    if pesos == 1:
-        print(f'Tus pesos colombianos equivalen a {round(numero_pesos/3875,1)} dolares')
-     
-    elif pesos == 2:
-        print(f'Tus pesos argentinos equivalen a {round(numero_pesos/65,1)} dolares')
-         
-    elif pesos ==3:
-        print(f'Tus pesos mexicanos equivalen a {round(numero_pesos/24,1)} dolares')  
     else:
-        print('Ingresa una opcion valida')
-     
+        op1= n * operation(b,(n-2))
+        print(op1)
+        return op1   
+            
+    
+
+        
+def run():
+
+    b=int(input('Write a number: '))
+    n=random.randint(1,10)
+    operation(b,n)
+
+
+
 if __name__ == "__main__":  
+    print('Wellcome to Recursive Algorithim')
     run()
+  
+
 
 
 
