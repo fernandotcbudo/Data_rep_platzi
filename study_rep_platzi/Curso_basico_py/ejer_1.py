@@ -1,4 +1,6 @@
 
+#
+
 import random
 import sys
 
@@ -15,7 +17,6 @@ def operation(b,n):
         return op1   
             
     
-
         
 def run():
 
@@ -26,7 +27,7 @@ def run():
 
 
 if __name__ == "__main__":  
-    print('Wellcome to Recursive Algorithim')
+    print('Wellcome to Recursive Algorithm')
     run()
   
 
