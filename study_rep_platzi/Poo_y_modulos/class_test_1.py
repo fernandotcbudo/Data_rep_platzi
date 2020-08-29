@@ -13,7 +13,7 @@ class car():
     wells=4
 
     def moving(self):
-        print('The car starst to move')
+        print('The car starts to move')
 
 
 
