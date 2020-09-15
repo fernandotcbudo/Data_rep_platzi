@@ -1,12 +1,65 @@
 #Exercise to practice getters and setters
 #Exercise to practice arrays
 #Exercise to practice try and except 
+
+TYPE_DIS_F='Fixed'
+TYPE_DIS_P='Percentage'
+
+
+class Discount():
+
+    def __init__(self,type,value):
+        
+        if not isinstance(value,int):
+            raise ValueError('Value must be a number')
+        if not isinstance(type,str):
+            raise ValueError('Type must be a string')
+        if type != TYPE_DIS_P and type != TYPE_DIS_F:
+            raise ValueError('Please check')
+        if type == TYPE_DIS_F and value <= 0:
+            raise ValueError('Fixed type must be greater than zero')
+        if type == TYPE_DIS_P and (value<=0 or value>100):
+            raise ValueError('Percentage type must be between 1 and 100')
+
+        self.__type= type
+        self.__value= value    
+
+    @property
+    def type(self):
+        return self.__type
+
+    @type.setter
+    def type(self,type):
+        self.__type= value
+
+    @property
+    def value(self):
+        return self.__value
+
+    @value.setter
+    def value(self,value):
+        self.__value=value
+
+    def apply_discount(self,price):
+
+        if self.__type == TYPE_DIS_F:
+            if price > self.__value:
+                return price - self.__value
+
+            else:
+                return 0
+
+        else: 
+            return price - (price * (self.__value/100))
+
+
 class Product():
 
-    def __init__ (self,code,name,price):
+    def __init__ (self,code,name,price,discount= None):
         self.__code=code
         self.__name=name
         self.__price=price
+        self.__discount=discount
 
 
     @property
@@ -29,7 +82,11 @@ class Product():
 
     @property
     def price(self):
-        return self.__price
+        if self.__discount == None:
+            return self.__price
+
+        else:
+            return self.__discount.apply_discount(self.__price)
 
     @price.setter
     def price(self,value):
@@ -95,18 +152,21 @@ class Order():
             print(f'Product: {p.name} Amount: {a}')
 
 
-p1=Product(1,'Banana',12)
-p2=Product(2,'Apple',20)
-p3=Product(3,'Orange',18)
+d1=Discount(TYPE_DIS_F,12)
+d2=Discount(TYPE_DIS_P,50)
+d3=Discount(TYPE_DIS_F,10)
+
+p1=Product(1,'Banana',12,d3)
+p2=Product(2,'Apple',20,d1)
+p3=Product(3,'Orange',18,d2)
 
 new_order=Order()
-
 
 
 if __name__ == "__main__":
     print('Wellcome to PRICE MARKET!')
     try:
-        new_order.add_pro(p1,5)
+        new_order.add_pro(p1,10)
         new_order.add_pro(p2,5)
         new_order.add_pro(p3,5)
 
@@ -119,6 +179,8 @@ if __name__ == "__main__":
         print(f'total cost is of this order: {new_order.total_order()}')
 
         new_order.show_order()
+
+
 
 
     except Exception as e:
