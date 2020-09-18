@@ -1,6 +1,7 @@
 #Exercise to practice getters and setters
 #Exercise to practice arrays
 #Exercise to practice try and except 
+#Final change
 
 TYPE_DIS_F='Fixed'
 TYPE_DIS_P='Percentage'
