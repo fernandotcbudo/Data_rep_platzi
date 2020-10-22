@@ -29,3 +29,11 @@ new_dic={
 }
 new_select_1=new_dic['Neck']
 print(f'Submission is {new_select_1}')
+
+#FLOW CONTROL
+keyword_1='texas12345'
+key_input=str(input('Write the keyword:'))
+if key_input == 'texas12345':
+    print('OK')
+else:
+    print('Sorry, try it again')
