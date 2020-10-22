@@ -37,3 +37,16 @@ if key_input == 'texas12345':
     print('OK')
 else:
     print('Sorry, try it again')
+
+#LOOPS 
+AGE= 18
+while True:
+    age_new= int(input('Write your age: '))
+    if age_new < AGE:
+        continue
+         
+    else:
+        print(f'Woooooo your age is {age_new}')
+        break  
+        
+
