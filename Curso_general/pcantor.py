@@ -1,17 +1,27 @@
-import math
+#FUNCTIONS
+def x(param1,param2,**others):
+    for i in others.items():
+        print(i)
 
-k=(float(1*10**14))
+if __name__ == "__main__":
+    x(1,2,tercero=3)
 
-z=(float(75*10**3))
-print(z)
-x=(float(8.314*300.15))
-print(x)
+def multip(y,z):
+    y= y+3
+    z.append(23)
+    print(y,z)
 
-e1=(z/x)
-print(e1)
+if __name__ == "__main__":
+    y=22
+    z=[22]
+    multip(y,z)
+    print(y,z)
+    
 
-e2=math.exp(e1)
+def sum(num1,num2):
+    return num1 + num2
+    
 
+if __name__ == "__main__":
+    print(sum(1,2))
 
-final=k-e2
-print(final)
