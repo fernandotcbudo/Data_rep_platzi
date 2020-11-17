@@ -31,6 +31,7 @@ class Date:
     def setDay(self,day):
         if day > 0 and day < 31:
             self.___day= day
+            print(self.__day)
         else:
             print("Error")
 
