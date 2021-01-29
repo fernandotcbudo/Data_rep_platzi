@@ -1,4 +1,4 @@
-#FUNCTIONS
+#FUNCTIONS EXAMPLE
 def x(param1,param2,**others):
     for i in others.items():
         print(i)
