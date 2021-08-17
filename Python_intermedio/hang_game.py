@@ -1,5 +1,5 @@
 import random
-import os
+from os import system
 
 IMAGES = ['''
   +---+
@@ -66,10 +66,15 @@ def random_words():
       
 #Shows the board
 def display_board(hidden_word,tries):
-      print(IMAGES[tries])
+      system('clear')
+      print('***************************************')
+      print('        The  H A N G  gamE!')
+      print('***************************************')
+      print(IMAGES[tries]) 
       print('')
       print(hidden_word)
       print('')
+      
 
 
 def run():
@@ -96,17 +101,15 @@ def run():
                   for i in letter_idx:
                         hidden_word[i]= current_word
                   letter_idx=[]
+                  
 
             try:
                   hidden_word.index('_')
 
             except ValueError:
                   print('')
-                  print('You win!!!')
+                  print(f'You win!!! the word was {word_r}')
                   break
 
-if __name__ == "__main__":
-  print('***************************************')
-  print('        The  H A N G  gamE!')
-  print('***************************************')
-  run()
+if __name__ == "__main__":     
+  run() 
